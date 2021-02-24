@@ -10,6 +10,10 @@ target 'HelloApp' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
+
+  pod 'react-native-login-twitter', :path => '../node_modules/react-native-login-twitter'
+
   target 'HelloAppTests' do
     inherit! :complete
     # Pods for testing

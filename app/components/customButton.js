@@ -10,8 +10,9 @@ class CustomButton extends Component {
     render() { 
         return ( 
             <View> 
-                <TouchableOpacity style={[styles.buttonStyle,this.props.pad,this.props.button,this.props.reset]} activeOpacity = { .5 }>
-                 <Text style={[styles.text,this.props.pad,this.props.button,this.props.reset]}>{this.props.title}</Text>
+                <TouchableOpacity style={[styles.buttonStyle,this.props.button]} activeOpacity = { .5 }
+                 onPress={() => this.props.navigation.navigate('Home')}>
+                 <Text style={[styles.text,this.props.button]}>{this.props.title}</Text>
                 </TouchableOpacity>
             </View>
          );
@@ -21,12 +22,12 @@ class CustomButton extends Component {
 const styles = StyleSheet.create({
     buttonStyle: {
         marginTop:10,
-        marginBottom:10,
+        marginBottom:8,
         marginRight:20,
         marginLeft:20,
         borderRadius:10,
         borderColor:'#fff',
-        backgroundColor:'#8f60de'
+        backgroundColor:'#8f60de',
     },
     text:{
         textAlign:'center',

@@ -5,11 +5,7 @@
  * @format
  * @flow strict-local
  */
-<ImageBackground source={require('../assests/background.jpeg')} style={styles.backgroundImage}>
-                    <Image source={require('../assests/logo.png')} style={styles.image}/>
-                    <Text style={styles.text}>Network</Text>
-                    <Text style={styles.text}>Smarter.</Text>
-                </ImageBackground>
+
 import React from 'react';
 import {
   SafeAreaView,
@@ -67,6 +63,15 @@ const App: () => React$Node = () => {
         <Button title="Cancel" onPress={() => {}}></Button>
     </View>
 </View>
+import FBSDK ,{LoginManager} from 'react-native-fbsdk'
+fbAuth(){
+    LoginManager.logInWithReadPermissions(['public_profile']).then(function(result){
+      if(result.isCancelled){
+        console.log('login is cancelled');
+      }else{
+        console.log('login is satisfied' + result.grantedPermissions.toString());
+      }
+    })
             <CustomButton/>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>

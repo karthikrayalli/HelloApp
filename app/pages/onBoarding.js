@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {View,Text,StyleSheet,Image,ImageBackground} from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import CustomButton from '../components/customButton'
 class BoardScreen extends Component {
     constructor(){
@@ -23,14 +24,20 @@ class BoardScreen extends Component {
                         <Image source={require('../assests/images/board2.png')} style={styles.image2}/>
                     </View> 
                     <Image source={require('../assests/images/board3.jpeg')} style={styles.image3}/>
-                        <CustomButton title="CREATE ACCOUNT" button={[styles.boardButton,styles.boardText]}
-                            onPress={() => this.props.navigation.navigate('Login')}/>
+                        <CustomButton title="CREATE ACCOUNT" button={[styles.boardButton,styles.boardText]}/>              
+                     
                    <View>
-                        <Text style={styles.login}>LOG IN</Text>
-                        <Text style={styles.privacy}>PRIVACY POLICY</Text>
+                   <TouchableOpacity activeOpacity = { .5 } 
+                        onPress={() => this.props.navigation.navigate('Login')}>
+                            <Text style={styles.login}>LOG IN</Text>
+                        </TouchableOpacity>
+                    <TouchableOpacity>
+                            <Text style={styles.privacy}>PRIVACY POLICY</Text>
+                        </TouchableOpacity>
                     </View> 
-               </ImageBackground>
+                    </ImageBackground>
                </View>
+      
         
          );
     }
@@ -90,14 +97,15 @@ const styles = StyleSheet.create({
     login:{
         textAlign:'center',
         color:'#8f60de',
-        paddingTop:15,
-        fontSize:17
+        marginTop:12,
+        fontSize:17,
+        
 
     },
     privacy:{
         textAlign:'center',
         color:'#8f60de',
-        paddingTop:35,
+        marginTop:30,
         fontSize:15
     },
     boardButton:{

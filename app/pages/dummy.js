@@ -35,14 +35,13 @@ import ResetPassword from './app/pages/resetPassword'
 import Input from './app/components/textInput'
 import Logged from './app/pages/loggedpage'
 import Navigation from './app/navigation/navigationContainer'
-import FbAuth from './app/authentication/fbAuth' 
-import GoogleSignIn from './app/authentication/GoogleAuth'
-//import Twitter from './app/authentication/twitter'
-import TwitterSignIn from './app/authentication/twitterAuth'
+import Auth from './app/pages/auth'
 class App extends Component{
   render(){
     return(
-<Navigation/>
+<View>
+  <Auth/>
+</View>
         
      
           
