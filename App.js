@@ -43,11 +43,7 @@ class App extends Component{
   render(){
     return(
 <Navigation/>
-        
-     
-          
-      
-    );
+  );
   }
 }
 export default App;
