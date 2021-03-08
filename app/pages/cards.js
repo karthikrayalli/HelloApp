@@ -9,7 +9,7 @@ class Cards extends Component {
             <View>
                <View style={{marginTop:15,marginLeft:15}}>
                     <Backhandler/>
-                        <Text>xkuynviryhgidboihjmfpokm,opd,k[p</Text>
+                        <Text>yhgidboihjmfpokm,opd,k[p</Text>
                     </View>
             </View>
          );

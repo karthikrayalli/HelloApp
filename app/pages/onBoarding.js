@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {View,Text,StyleSheet,Image,ImageBackground} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import SplashScreen from 'react-native-splash-screen'
 import CustomButton from '../components/customButton'
 class BoardScreen extends Component {
     constructor(){
@@ -9,6 +10,7 @@ class BoardScreen extends Component {
 
         }
     }
+   
     render() { 
         return ( 
             <View style={{height:'100%'}}>
@@ -24,7 +26,8 @@ class BoardScreen extends Component {
                         <Image source={require('../assests/images/board2.png')} style={styles.image2}/>
                     </View> 
                     <Image source={require('../assests/images/board3.jpeg')} style={styles.image3}/>
-                        <CustomButton title="CREATE ACCOUNT" button={[styles.boardButton,styles.boardText]}/>              
+                        <CustomButton title="CREATE ACCOUNT" button={[styles.boardButton,styles.boardText]}
+                            page={() => this.props.navigation.navigate('Create')}/>              
                      
                    <View>
                    <TouchableOpacity activeOpacity = { .5 } 
@@ -83,7 +86,8 @@ const styles = StyleSheet.create({
        fontSize:40,
        fontWeight:'bold',
        marginTop:-40,
-       marginRight:20
+       marginRight:20,
+       fontFamily:"Ubuntu-Italic"
     },
     text1:{
        color:'#fff',

@@ -12,7 +12,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 //import Zocial from 'react-native-vector-icons/Zocial '
-class LoginPage extends Component {
+class CreateAccount extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -88,7 +88,7 @@ class LoginPage extends Component {
                     <AntDesign name={'left'} size={25} color={'#fff'}
                         onPress={() => this.props.navigation.navigate('Board')}/>
                     </View>
-                        <Text style={styles.text}>Enter your email and password to log in</Text>
+                        <Text style={styles.text}>To sign up,enter your email and create a password</Text>
                         <View style={styles.subContainer}>
                             <View>
                                 <View style={{flexDirection:'row',justifyContent:'space-around',paddingTop:30}}>
@@ -100,8 +100,8 @@ class LoginPage extends Component {
                                     <Input textInput='Email'  validEmail={this.state.email} emailChange={this.handleEmailChange}/> 
                                     <Password textInput='Password' validPassword={this.state.password} passwordChange={this.handlePasswordChange}/>
                                     <Text style={{color:'red',textAlign:'center'}}>{this.state.errors}</Text>
-                                  <CustomButton title='LOG IN'  disabled={this.state.validity} button={[this.state.validity?styles.activeStyle:styles.inactiveStyle,styles.loginText]} page={this.validation}/>
-                               <TouchableOpacity onPress={() => this.props.navigation.navigate('Reset')}><Text style={{fontSize:18,paddingBottom:20,paddingTop:15,textAlign:'center',color:'#8f60de'}}>FORGOT PASSWORD</Text></TouchableOpacity> 
+                                  <View style={{paddingBottom:10}}><CustomButton title='GET STARTED'  disabled={this.state.validity} button={[this.state.validity?styles.activeStyle:styles.inactiveStyle,styles.loginText]} page={this.validation}/>
+                                  </View>
                             </View>
                         </View>
                 </View> 
@@ -147,4 +147,4 @@ const styles = StyleSheet.create({
         fontSize:15
     },
 });
-export default LoginPage;
+export default CreateAccount;

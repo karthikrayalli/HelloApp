@@ -11,7 +11,7 @@ class CustomButton extends Component {
         return ( 
             <View> 
                 <TouchableOpacity style={[styles.buttonStyle,this.props.button]} activeOpacity = { .5 }
-                 onPress={() => this.props.navigation.navigate('Home')}>
+                 onPress={this.props.page}>
                  <Text style={[styles.text,this.props.button]}>{this.props.title}</Text>
                 </TouchableOpacity>
             </View>

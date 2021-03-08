@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TextInput, Text} from 'react-native';
+import { StyleSheet, View, TextInput, Text,TouchableOpacity} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 class Input extends Component{
  constructor(){
    super();
@@ -19,7 +19,7 @@ class Input extends Component{
              <Entypo name={'mail'} size={25} style={{color:'grey',paddingLeft:10}}/>
         
           <TextInput
-                style={{paddingLeft:10,fontSize:18}}
+                style={{paddingLeft:10,fontSize:18,width:'90%'}}
                 placeholder={this.props.textInput}
                 underlineColorAndroid="transparent"
                 onChangeText={this.props.emailChange}
@@ -29,29 +29,37 @@ class Input extends Component{
     );
   }
 }
-class InputPassword extends Component{
-  constructor(){
-    super();
+class Password extends Component{
+  constructor(props){
+    super(props);
     this.state={
- 
+      //   show:'false',
+        visible:true
+      // passwordVisible: true,
     }
+  }
+  onIconPress = () =>{
+    // this.setState({passwordVisible: !this.state.passwordVisible});
+     this.setState({visible: !this.state.visible});
   }
   
    render() {
+  //   console.log('secure',this.props.secure)
      return (
         
          <View style={styles.SectionStyle}>
-  
               <FontAwesome name={'lock'} size={25} style={{color:'grey',paddingLeft:10}}/>
-         
            <TextInput
-                 style={{paddingLeft:10,fontSize:18}}
+                 style={{paddingLeft:10,fontSize:18,width:'75%'}}
                  placeholder={this.props.textInput}
-                 secureTextEntry={true} 
+                secureTextEntry={this.state.visible} 
                  underlineColorAndroid="transparent"
                  onChangeText={this.props.passwordChange}
-                 value={this.props.validPassword}/>
-            <AntDesign name={'eye'} size={20} style={{color:'grey',position:'absolute',right:20}} />
+                 value={this.props.validPassword}
+/>
+          <TouchableOpacity style={{position:'absolute',right:20}} onPress={() => this.onIconPress()}>
+              <MaterialCommunityIcons name={this.state.visible ? 'eye-outline':'eye-off-outline'} size={20} color={'black'}/>
+              </TouchableOpacity>  
              
   
          </View>
@@ -83,4 +91,4 @@ const styles = StyleSheet.create({
 
  
 });
-export {Input,InputPassword};
+export {Input,Password};
