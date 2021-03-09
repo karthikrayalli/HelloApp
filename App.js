@@ -32,10 +32,17 @@ import GoogleSignIn from './app/authentication/GoogleAuth'
 import TwitterSignIn from './app/authentication/twitterAuth'
 import CreateAccount from './app/pages/createAccount'
 
+import { Provider } from 'react-redux'
+import configureStore from './app/store/index'
+
+const store = configureStore();
+
 class App extends Component{
   render(){
     return(
-        <Navigation/>
+    <Provider store={store}>
+      <Navigation/>
+      </Provider>
   );
   }
 }
