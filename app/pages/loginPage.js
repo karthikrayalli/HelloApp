@@ -8,6 +8,7 @@ import FbAuth from '../authentication/fbAuth'
 import GoogleSignIn from '../authentication/GoogleAuth'
 import TwitterSignIn from '../authentication/twitterAuth'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import TopNotch from '../components/statusBar'
 
 
 
